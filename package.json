@@ -1,0 +1,31 @@
+{
+  "name": "hem-render-html",
+  "description": "This module adds the ability to dynamically generate the HTML files for your hem project.",
+  "version": "0.0.1",
+  "keywords": ["hem", "html", "render"],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AbleCoder/hem-render-html.git"
+  },
+  "dependencies": {
+    "eco": "1.1.0-rc-3",
+    "hem": "~0.1.7"
+  },
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://github.com/AbleCoder/hem-render-html/blob/master/LICENSE.txt"
+  }],
+  "bugs": {
+    "url": "https://github.com/AbleCoder/hem-render-html/issues"
+  },
+  "homepage": "https://github.com/AbleCoder/hem-render-html",
+  "engines": {
+    "node": "*"
+  },
+  "author": {
+    "name": "AbleCoder",
+    "email": "an.able.coder@gmail.com",
+    "web": "http://AbleCoder.com"
+  },
+  "main": "./lib/hem-render-html.js"
+}

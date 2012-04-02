@@ -1,0 +1,3 @@
+<%- @render "__header.eco", {pageName: 'Contact'} %>
+<p>Conatact me in person.</p>
+<%- @render "__footer.eco", %>
