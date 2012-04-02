@@ -27,13 +27,11 @@ class HemRenderHtml extends Hem
         @htmlPackage().compile()
 
   watch: ->
-    console.log "WATCH HTML"
     @watchHtml()
     super
 
   watchHtml: ->
     @buildHtml()
-    console.log path.existsSync(@options.html)
     dir = path.dirname(@options.html)
     dir = @options.html
     if path.existsSync(dir)
