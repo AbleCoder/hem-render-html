@@ -1,7 +1,7 @@
 {
   "name": "hem-render-html",
   "description": "This module adds the ability to dynamically generate HTML files for your hem project.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "keywords": ["hem", "html", "render"],
   "repository": {
     "type": "git",

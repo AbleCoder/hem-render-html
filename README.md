@@ -17,7 +17,7 @@ header and footer partial template used for all static pages in my site.
       "dependencies": {
         "serveup": "~0.0.4",
         "hem": "~0.1.7",
-        "hem-render-html": "~0.0.3",
+        "hem-render-html": "~0.0.4",
         "eco": "1.1.0-rc-3",
         "es5-shimify": "~0.0.1",
         "json2ify": "~0.0.1",
@@ -37,7 +37,7 @@ header and footer partial template used for all static pages in my site.
 1. Add a `slug.js` file to the root of your project with the following:
 
     ```
-    var hem  = new (require('../lib/hem-render-html'));
+    var hem  = new (require('hem-render-html'));
     var argv = process.argv.slice(2);
 
     hem.exec(argv[0]);
