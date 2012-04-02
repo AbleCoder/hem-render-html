@@ -4,6 +4,7 @@
   "dependencies": {
     "serveup": "~0.0.4",
     "hem": "~0.1.7",
+    "hem-render-html": "~0.0.3",
     "eco": "1.1.0-rc-3",
     "es5-shimify": "~0.0.1",
     "json2ify": "~0.0.1",

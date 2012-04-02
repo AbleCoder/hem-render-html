@@ -6,7 +6,7 @@ class RenderEco
   globalContext: {}
   srcPath: ''
 
-  constructor: (srcPath, globalContextFile = '__global.coffee') ->
+  constructor: (srcPath, globalContextFile) ->
     @srcPath = srcPath
 
     # load global context

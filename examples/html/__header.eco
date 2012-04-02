@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/application.css" type="text/css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <h1>siteName = <%= @siteName %></h1>
-    <h2>pageName = <%= @pageName %></h2>
-    <a href="/">Home</a>
-    <a href="/contact.html">Contact</a>
+    <h1><%= @siteName %></h1>
+    <h2><%= @pageName %></h2>
+    <%- @pageLink 'Home', '/', @pageName %>
+    <%- @pageLink 'Contact', '/contact.html', @pageName %>

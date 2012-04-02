@@ -3,19 +3,21 @@ fs        = require('fs')
 RenderEco = require('./render-eco')
 
 class HTML
-  constructor: (srcPath, renderPath) ->
+  constructor: (srcPath, renderPath, htmlDelete, globalContextFile) ->
     try
+      @htmlDelete   = htmlDelete
       @srcPath      = path.resolve(srcPath)
       @renderPath   = path.resolve(renderPath)
-      @renderEngine = new RenderEco(@srcPath)
+      @renderEngine = new RenderEco(@srcPath, globalContextFile)
     catch e
 
   compile: ->
     return unless @srcPath and @renderPath
 
-    # delete existing html files
-    for fn in @getFiles @renderPath, /\.html$/
-      fs.unlinkSync("#{@renderPath}/#{fn}")
+    if @htmlDelete
+      # delete existing html files
+      for fn in @getFiles @renderPath, /\.html$/
+        fs.unlinkSync("#{@renderPath}/#{fn}")
 
     # build list of pages to render
     pages = @getFiles @srcPath, /\.eco$/, /^\_\_/, /\.eco$/
@@ -50,5 +52,5 @@ class HTML
 
 module.exports =
   HTML: HTML
-  createPackage: (srcPath, renderPath) ->
-    new HTML(srcPath, renderPath)
+  createPackage: (srcPath, renderPath, htmlDelete, htmlGlobalContextFile) ->
+    new HTML(srcPath, renderPath, htmlDelete, htmlGlobalContextFile)

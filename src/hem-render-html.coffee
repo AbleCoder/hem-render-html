@@ -7,6 +7,7 @@ class HemRenderHtml extends Hem
   htmlOptions:
     html: './html'
     htmlDelete: on
+    htmlGlobalContextFile: '__global.coffee'
     htmlPath: './public'
 
   constructor: (options = {}) ->
@@ -41,6 +42,7 @@ class HemRenderHtml extends Hem
           @buildHtml()
 
   htmlPackage: ->
-    html.createPackage(@options.html, @options.htmlPath)
+    html.createPackage(@options.html, @options.htmlPath, @options.htmlDelete,
+                       @options.htmlGlobalContextFile)
 
 module.exports = HemRenderHtml
