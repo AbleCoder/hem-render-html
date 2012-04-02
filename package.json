@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "eco": "1.1.0-rc-3",
-    "hem": "~0.1.7"
+    "hem": "~0.1.7",
+    "watch" : "~0.4.0"
   },
   "licenses": [{
     "type": "MIT",

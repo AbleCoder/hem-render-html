@@ -27,16 +27,19 @@ class HemRenderHtml extends Hem
         @htmlPackage().compile()
 
   watch: ->
+    console.log "WATCH HTML"
     @watchHtml()
     super
 
   watchHtml: ->
     @buildHtml()
+    console.log path.existsSync(@options.html)
     dir = path.dirname(@options.html)
+    dir = @options.html
     if path.existsSync(dir)
       require('watch').watchTree dir, (file, curr, prev) =>
         if curr and (curr.nlink is 0 or +curr.mtime isnt +prev?.mtime)
-          console.log "#{file} changed.  Rebuilding all HTML files."
+          console.log "#{file} changed. Rebuilding all HTML files."
           @buildHtml()
 
   htmlPackage: ->

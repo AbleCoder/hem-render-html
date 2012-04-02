@@ -14,12 +14,12 @@ class RenderEco
     delete require.cache[path]
     @globalContext = require(path)
 
-  render: (templateFile, localContext = {}, includeGlobalContext = no) =>
+  render: (templateFile, localContext = {}, includeGlobalContext = yes) =>
+    context = {}
     if includeGlobalContext
-      context = @globalContext
-      context[k] = v for k, v of localContext
-    else
-      context = localContext
+      context[k] = v for k, v of @globalContext
+
+    context[k] = v for k, v of localContext
 
     # add render helper to context
     context['render'] = @render

@@ -9,7 +9,6 @@ class HTML
       @renderPath   = path.resolve(renderPath)
       @renderEngine = new RenderEco(@srcPath)
     catch e
-      console.log e
 
   compile: ->
     return unless @srcPath and @renderPath
